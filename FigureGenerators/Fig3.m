@@ -1,4 +1,4 @@
-%load benchmark network data
+% load benchmark network data
 load('Computation_Module/Conversions/networks/network56.dat')
 
 %Run OCDAs on benchmark
