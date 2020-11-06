@@ -1,4 +1,3 @@
-
 %-------------------------------------------------------------------------------
 % Load processed right-hemisphere HCP structural connectivity data
 % Roberts method (0.15) on iFOD
@@ -9,7 +8,7 @@ f = figure('color','w');
 
 % Connectome visualisation
 subplot(2,3,[1,2,4,5]); axis('square')
-Visualisebrain(RH);
+PlotConnectome(RH,false,true);
 
 %-------------------------------------------------------------------------------
 % Degree vs strength plot
