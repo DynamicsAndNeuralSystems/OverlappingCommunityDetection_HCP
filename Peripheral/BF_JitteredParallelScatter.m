@@ -88,13 +88,7 @@ end
 % Custom colormap
 if ~isfield(extraParams,'theColors')
     % if numGroups <= 3
-    theColors = BF_getcmap('set1',5,1);
-    % else
-    %theColors = BF_getcmap('spectral',numGroups,1);
-    % end
-%     if length(theColors) < numGroups
-%         theColors = arrayfun(@(x)zeros(3,1),1:numGroups,'UniformOutput',0);
-%     end
+    theColors = BF_GetColorMap('set1',5,1);
 else
     theColors = extraParams.theColors;
     % fprintf(1,'Using custom colors\n');

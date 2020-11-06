@@ -14,10 +14,8 @@ PlotConnectome(RH,false,true);
 % Degree vs strength plot
 subplot(2,3,3);
 binRH = (RH > 0);
-degree = sum(binRH,1)'+sum(binRH,2)-diag(binRH);
-degree = degree/2;
-strength = sum(RH,1)'+sum(RH,2)-diag(RH);
-strength = strength/2;
+degree = sum(binRH,1);
+strength = sum(RH,1);
 plot(degree,strength,'ok','MarkerFaceColor','k','MarkerSize',3)
 xlim([0,max(degree)])
 title('B','FontSize', 15);
@@ -35,3 +33,15 @@ xlabel('Degree, k')
 ylabel('Frequency')
 
 f.Position = [1000        1002         648         336];
+
+%-------------------------------------------------------------------------------
+% Powerlaw?:
+% if any(degree==0)
+%     numLone = sum(degree==0);
+%     warning('%u nodes have no connections--excluding',numLone)
+%     degree = degree(degree>0);
+% end
+
+% [binCenters,Nnorm] = binLogLog(degree,10);
+% f = figure('color','w');
+% loglog(binCenters,Nnorm,'ok')
