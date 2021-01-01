@@ -6,7 +6,7 @@ cd /Users/aditijha/Desktop/communityDetection/
 %Run OCDAs on benchmark
 Computation(network, {'OSLOM', 'Clique', 'NNMF', 'Infomap','SLPA'}, 1, 'weighted_networks/communities/community1');
 
-%Visualise performance
+%Visualize performance
 cd Visualisation_Module
 Visualisation({'Benchmark', 'OSLOM', 'Clique', 'NNMF', 'Infomap','SLPA'})
 
