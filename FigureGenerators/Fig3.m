@@ -1,15 +1,12 @@
-%-------------------------------------------------------------------------------
-% Load benchmark network data
-storedBenchmark = fullfile(GiveMeFile('OCDA_toolbox'),'Computation','Conversions','networks');
-networkDataFile = fullfile(storedBenchmark,'network56.dat');
-nodeLabelDataFile = fullfile(storedBenchmark,'community56.dat');
+%load benchmark network data
+generatesyntheticnetwork(1)
+network = load('weighted_networks/networks/network1.dat');
 
-% Run OCDAs on this benchmark
-load(networkDataFile,'network56')
-cd(GiveMeFile('OCDA_toolbox'));
-Computation(network56, {'OSLOM','Jerry','Shen','NNMF','Infomap'}, true, nodeLabelDataFile)
+cd /Users/aditijha/Desktop/communityDetection/
+%Run OCDAs on benchmark
+Computation(network, {'OSLOM', 'Clique', 'NNMF', 'Infomap','SLPA'}, 1, 'weighted_networks/communities/community1');
 
-% Visualise performance
-% cd ../
-% cd Visualisation_Module
-Visualisation({'Benchmark', 'OSLOM', 'Shen', 'NNMF', 'Infomap','SLPA'})
+%Visualise performance
+cd Visualisation_Module
+Visualisation({'Benchmark', 'OSLOM', 'Clique', 'NNMF', 'Infomap','SLPA'})
+
