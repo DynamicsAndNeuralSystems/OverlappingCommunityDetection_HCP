@@ -17,5 +17,6 @@ Other analyses not presented in the form of figures:
 1. Jaccard Coefficient Analysis: Can be reproduced by running `jaccard_test` in `Peripheral`.
 2. F1 and Omega score over synthetic benchmarks: Can be reproduuced using `compute_metrics` in `Peripheral`.
 
+The processed HCP group connectome (only cortical areas) can be found under `Results/RH.mat`.
 
 
