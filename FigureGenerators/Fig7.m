@@ -1,14 +1,21 @@
 % load RH connectome
-% load('RH.mat');
+load('RH.mat');
 
 %load Louvain community labels for RH connectome
 load('louvaincomm.mat');
+% This was generated using fast-consensus code from Tandon et. al. (the
+% code is no more publically available) 
+% The other option is to use Mika Rubinov's code:
+% peripheral/community_louvain(RH, 1);
+
 
 %Calculate Participation Coefficient
 P = participation_coef(RH,louvaincomm);
+louvain_P = P;
 
 % Calculate within-module degree z-scored
 z = module_degree_zscore(RH, louvaincomm);
+louvain_z = z;
 
 % subplot(1,2,1); axis square;
 
@@ -17,6 +24,8 @@ scatter(P,z,80,color1,'filled');
 hold on
 
 %load OSLOM community affiliation vectors on RH connectome 
+%This can be generated using:
+% Computation(RH, {'OSLOM'}, 0);
 load('oslomcomm.mat');
 overlapping = find(sum(oslomcomm>0, 2)==2); % list of overlapping nodes obtained from OSLOM
 
@@ -40,9 +49,11 @@ load('oslomRHnew.mat');
 
 %Calculate Participation Coefficient
 P = participation_coef(RHnew,oslomRHnew);
+oslom_P = P;
 
 % Calculate within-module degree z-scored
 z = module_degree_zscore(RHnew, oslomRHnew);
+oslom_z = z;
 
 % subplot(1,2,2); axis square;
 figure;
@@ -51,6 +62,8 @@ scatter(P,z,80,color1,'filled');
 hold on
 
 overlapping(12:22) = [181:1:191];
+
+z(overlapping)
 
 scatter(P(overlapping), z(overlapping), 80,'filled','r');
 xlabel('Participation Coefficient, P');
