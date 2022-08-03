@@ -1,7 +1,7 @@
 % load RH connectome
 % load('RH.mat');
 
-%load Louvain community labels for RH connectome
+% Load Louvain community labels for RH connectome
 load('louvaincomm.mat');
 
 %Calculate Participation Coefficient
@@ -16,7 +16,7 @@ color1 = [0.66,0.66,0.66];
 scatter(P,z,80,color1,'filled');
 hold on
 
-%load OSLOM community affiliation vectors on RH connectome 
+% Load OSLOM community affiliation vectors on RH connectome
 load('oslomcomm.mat');
 overlapping = find(sum(oslomcomm>0, 2)==2); % list of overlapping nodes obtained from OSLOM
 
@@ -29,10 +29,9 @@ title('Louvain', 'Fontsize',15);
 
 % For OSLOM, replacing each overlapping node by two non-overlapping nodes
 % (since every overlapping node belong to two communities)
-
-RHnew(1:180,1:180)=RH;
-RHnew(181:191,1:180)=RH(overlapping,:);
-RHnew(1:180,181:191)=RH(:,overlapping);
+RHnew(1:180,1:180) = RH;
+RHnew(181:191,1:180) = RH(overlapping,:);
+RHnew(1:180,181:191) = RH(:,overlapping);
 RHnew(181:191,181:191) = RH(overlapping, overlapping);
 
 %load OSLOM community labels for RHnew connectome
@@ -58,7 +57,3 @@ ylabel('Within-module strength, z');
 xlim([0 1]);
 legend('Non-Overlapping nodes','Overlapping nodes','Location','southeast');
 title('OSLOM', 'Fontsize',15);
-
-
-
-

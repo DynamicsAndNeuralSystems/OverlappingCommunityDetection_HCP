@@ -9,7 +9,7 @@ load(networkDataFile,'network56')
 cd(GiveMeFile('OCDA_toolbox'));
 Computation(network56, {'OSLOM','Jerry','Shen','NNMF','Infomap'}, true, nodeLabelDataFile)
 
-% Visualise performance
+% Visualize performance
 % cd ../
-% cd Visualisation_Module
-Visualisation({'Benchmark', 'OSLOM', 'Shen', 'NNMF', 'Infomap','SLPA'})
+% cd Visualization_Module
+Visualization({'Benchmark', 'OSLOM', 'Shen', 'NNMF', 'Infomap', 'SLPA'})
