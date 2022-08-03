@@ -1,4 +1,6 @@
 % load ENMI for each method for 1000 benchmarks
+% These results can be reproduced using:
+% peripheral/compute_metrics
 
 load('ENMI_OSLOM.mat');
 load('ENMI_NNMF.mat');

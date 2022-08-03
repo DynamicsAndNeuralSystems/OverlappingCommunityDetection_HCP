@@ -13,3 +13,18 @@ Computation(network56, {'OSLOM','Jerry','Shen','NNMF','Infomap'}, true, nodeLabe
 % cd ../
 % cd Visualization_Module
 Visualization({'Benchmark', 'OSLOM', 'Shen', 'NNMF', 'Infomap', 'SLPA'})
+
+
+% ORIGINAL ADITI:
+% %load benchmark network data
+% generatesyntheticnetwork(1)
+% network = load('weighted_networks/networks/network1.dat');
+
+% cd /Users/aditijha/Desktop/communityDetection/
+% %Run OCDAs on benchmark
+% Computation(network, {'OSLOM', 'Clique', 'NNMF', 'Infomap','SLPA'}, 1, 'weighted_networks/communities/community1');
+
+% % Visualize performance
+% % cd ../
+% % cd Visualization_Module
+% Visualization({'Benchmark', 'OSLOM', 'Shen', 'NNMF', 'Infomap', 'SLPA'})
