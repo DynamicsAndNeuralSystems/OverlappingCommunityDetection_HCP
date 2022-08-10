@@ -1,10 +1,11 @@
 function done = generatesyntheticnetwork(number)
-% Function to generate synthetic networks 
+% Function to generate synthetic networks
 %
 % INPUT:
 % number: Number of networks to generate
 % Aditi Jha, 29/12/2020
 %--------------------------------------------------------
+
 cd weighted_networks
 mkdir networks
 mkdir communities
@@ -26,7 +27,7 @@ for i=1:number
     on = randi([0.1*N, 0.15*N],1);
     % membership of overlapping nodes
     om = randi([2,3],1);
-    % Mixing parameters 
+    % Mixing parameters
     mut = randi([2,4],1)*0.1;
     muw = randi([2,4],1)*0.1;
 
@@ -36,8 +37,10 @@ for i=1:number
     newpath_comm = ['mv community.dat communities/community', int2str(i), '.dat'];
     system(newpath_net)
     system(newpath_comm)
-    
+
 end
-done = 1;
-cd ..
+
+done = true;
+cd('../')
+
 end

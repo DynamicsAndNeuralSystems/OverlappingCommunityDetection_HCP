@@ -4,10 +4,9 @@ load('RH.mat');
 %load Louvain community labels for RH connectome
 load('louvaincomm.mat');
 % This was generated using fast-consensus code from Tandon et. al. (the
-% code is no more publically available) 
+% code is no more publically available)
 % The other option is to use Mika Rubinov's code:
 % peripheral/community_louvain(RH, 1);
-
 
 %Calculate Participation Coefficient
 P = participation_coef(RH,louvaincomm);
@@ -21,27 +20,27 @@ louvain_z = z;
 
 color1 = [0.66,0.66,0.66];
 scatter(P,z,80,color1,'filled');
-hold on
+hold('on')
 
-%load OSLOM community affiliation vectors on RH connectome 
+%load OSLOM community affiliation vectors on RH connectome
 %This can be generated using:
 % Computation(RH, {'OSLOM'}, 0);
 load('oslomcomm.mat');
-overlapping = find(sum(oslomcomm>0, 2)==2); % list of overlapping nodes obtained from OSLOM
+overlapping = find(sum(oslomcomm > 0, 2)==2); % list of overlapping nodes obtained from OSLOM
 
 scatter(P(overlapping), z(overlapping), 80,'filled','r');
 xlabel('Participation Coefficient, P');
 ylabel('Within-module strength, z');
 xlim([0 1]);
 legend('Non-Overlapping nodes','Overlapping nodes','Location','southeast');
-title('Louvain', 'Fontsize',15);
+title('Louvain','Fontsize',15);
 
 % For OSLOM, replacing each overlapping node by two non-overlapping nodes
 % (since every overlapping node belong to two communities)
 
-RHnew(1:180,1:180)=RH;
-RHnew(181:191,1:180)=RH(overlapping,:);
-RHnew(1:180,181:191)=RH(:,overlapping);
+RHnew(1:180,1:180) = RH;
+RHnew(181:191,1:180) = RH(overlapping,:);
+RHnew(1:180,181:191) = RH(:,overlapping);
 RHnew(181:191,181:191) = RH(overlapping, overlapping);
 
 %load OSLOM community labels for RHnew connectome
@@ -56,12 +55,12 @@ z = module_degree_zscore(RHnew, oslomRHnew);
 oslom_z = z;
 
 % subplot(1,2,2); axis square;
-figure;
+figure('color','w');
 color1 = [0.66,0.66,0.66];
 scatter(P,z,80,color1,'filled');
-hold on
+hold('on')
 
-overlapping(12:22) = [181:1:191];
+overlapping(12:22) = (181:1:191); % list of overlapping nodes obtained from OSLOM
 
 z(overlapping)
 
@@ -71,7 +70,3 @@ ylabel('Within-module strength, z');
 xlim([0 1]);
 legend('Non-Overlapping nodes','Overlapping nodes','Location','southeast');
 title('OSLOM', 'Fontsize',15);
-
-
-
-

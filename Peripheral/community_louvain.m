@@ -1,4 +1,4 @@
-function [M,Q]=community_louvain(W,gamma,M0,B)
+function [M,Q] = community_louvain(W,gamma,M0,B)
 %COMMUNITY_LOUVAIN     Optimal community structure
 %
 %   M     = community_louvain(W);
@@ -98,7 +98,7 @@ if strcmp(type_B,'negative_sym') || strcmp(type_B,'negative_asym')
     W0 = W.*(W>0);                          %positive weights matrix
     s0 = sum(sum(W0));                      %weight of positive links
     B0 = W0-gamma*(sum(W0,2)*sum(W0,1))/s0; %positive modularity
-    
+
     W1 =-W.*(W<0);                          %negative weights matrix
     s1 = sum(sum(W1));                      %weight of negative links
     if s1                                   %negative modularity
@@ -156,19 +156,19 @@ while Q-Q0>1e-10
             ma = Mb(u);                                 % current module of u
             dQ = Hnm(u,:) - Hnm(u,ma) + B(u,u);
             dQ(ma) = 0;                                 % (line above) algorithm condition
-            
+
             [max_dQ,mb] = max(dQ);                      % maximal increase in modularity and corresponding module
             if max_dQ>1e-10                             % if maximal increase is positive
                 flag = true;
                 Mb(u) = mb;                             % reassign module
-                
+
                 Hnm(:,mb) = Hnm(:,mb)+B(:,u);           % change node-to-module strengths
                 Hnm(:,ma) = Hnm(:,ma)-B(:,u);
             end
         end
     end
     [~,~,Mb] = unique(Mb);                              % new module assignments
-    
+
     M0 = M;
     if first_iteration
         M=Mb;
@@ -178,7 +178,7 @@ while Q-Q0>1e-10
             M(M0==u)=Mb(u);                             % assign new modules
         end
     end
-    
+
     n=max(Mb);                                          % new number of modules
     B1=zeros(n);                                        % new weighted matrix
     for u=1:n
@@ -189,10 +189,10 @@ while Q-Q0>1e-10
         end
     end
     B=B1;
-    
+
     Mb=1:n;                                             % initial module assignments
     Hnm=B;                                              % node-to-module strength
-    
+
     Q0=Q;
     Q=trace(B);                                         % compute modularity
 end

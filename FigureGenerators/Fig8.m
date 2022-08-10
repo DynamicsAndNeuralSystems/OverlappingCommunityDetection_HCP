@@ -6,8 +6,8 @@ load('louvaincomm.mat');
 load('oslomcomm.mat');
 
 % Keeping all edges that connect to node 63 (which is the target node to visualize based on Fig7)
-keepNode = RH(63,:)>0;
-keepNode(63)=1;
+keepNode = RH(63,:) > 0;
+keepNode(63) = 1;
 RHsub = RH(keepNode, keepNode);
 nnodes = size(RHsub,1);
 
@@ -15,10 +15,10 @@ nnodes = size(RHsub,1);
 lcomm = louvaincomm(keepNode);
 ocomm = oslomcomm(keepNode,:);
 % Creating a list with community IDs since OSLOM output is in the form of
-% one-hot matrix 
+% one-hot matrix
 max_comm = size(ocomm,2);
 ocomm_list = zeros(nnodes,1);
-for i=1:nnodes
+for i = 1:nnodes
     % Community assignments for ith node
     comms_i = find(ocomm(i,:));
     ncomms_i = size(comms_i,2);
@@ -30,12 +30,12 @@ for i=1:nnodes
     end
 end
 
-nodelist = [1:1:nnodes];
+nodelist = (1:1:nnodes);
 
 figure();
 G = graph(RHsub);
 p = plot(G);
-% Communities 1 and 2 are merged by Louvain 
+% Communities 1 and 2 are merged by Louvain
 % Nodes 7 represent overlapping nodes
 nodes1 = nodelist(ocomm_list==1);
 nodes2 = nodelist(ocomm_list==2);
@@ -63,4 +63,3 @@ highlight(p,nodes2, 'NodeColor', [100/256, 199/256, 232/256]);
 p.NodeFontSize = 0.5;
 colormap(jet);
 title('Louvain');
-

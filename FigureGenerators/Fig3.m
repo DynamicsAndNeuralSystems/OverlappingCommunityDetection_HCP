@@ -7,12 +7,12 @@ nodeLabelDataFile = fullfile(storedBenchmark,'community56.dat');
 % Run OCDAs on this benchmark
 load(networkDataFile,'network56')
 cd(GiveMeFile('OCDA_toolbox'));
-Computation(network56, {'OSLOM','Jerry','Shen','NNMF','Infomap'}, true, nodeLabelDataFile)
+OLCD_Computation(network56, {'OSLOM','Jerry','Shen','NNMF','Infomap'}, true, nodeLabelDataFile)
 
 % Visualize performance
 % cd ../
 % cd Visualization_Module
-Visualization({'Benchmark', 'OSLOM', 'Shen', 'NNMF', 'Infomap', 'SLPA'})
+OLCD_Visualization({'Benchmark', 'OSLOM', 'Shen', 'NNMF', 'Infomap', 'SLPA'})
 
 
 % ORIGINAL ADITI:
