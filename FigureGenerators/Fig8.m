@@ -11,7 +11,9 @@ load('louvaincomm.mat');
 load('oslomcomm.mat');
 % load('oslomRHnew.mat');
 
+%-------------------------------------------------------------------------------
 %% FILTER
+%-------------------------------------------------------------------------------
 % Keeping all edges that connect to node 63 (which is the target node to visualize based on Fig. 7)
 keepNode = RH(63,:) > 0;
 keepNode(63) = 1;
@@ -22,7 +24,9 @@ numNodes = size(RHsub,1);
 lcomm = louvaincomm(keepNode);
 ocomm = oslomcomm(keepNode,:);
 
+%-------------------------------------------------------------------------------
 %% LIST
+%-------------------------------------------------------------------------------
 % Creating a list with community IDs since OSLOM output is in the form of
 % one-hot matrix
 max_comm = size(ocomm,2);
@@ -43,7 +47,9 @@ end
 
 nodelist = (1:numNodes);
 
+%-------------------------------------------------------------------------------
 %% PLOT
+%-------------------------------------------------------------------------------
 figure('color','w')
 % OSLOM
 subplot(1,2,2)
