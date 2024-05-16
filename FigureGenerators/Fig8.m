@@ -9,6 +9,7 @@ load('RH.mat')
 load('louvaincomm.mat');
 % Loading community structure as determined by OSLOM
 load('oslomcomm.mat');
+% load('oslomRHnew.mat');
 
 %% FILTER
 % Keeping all edges that connect to node 63 (which is the target node to visualize based on Fig. 7)
@@ -31,8 +32,10 @@ for i = 1:numNodes
     comms_i = find(ocomm(i,:));
     ncomms_i = size(comms_i,2);
     if ncomms_i > 1
-        % Overlapping node
-        ocomm_list(i) = max_comm+1;
+        % Overlapping node between networks 1 + 2:
+        if ocomm(i,1) > 0 && ocomm(i,2) > 0
+            ocomm_list(i) = max_comm + 1;
+        end
     else
         ocomm_list(i) = comms_i(1);
     end
@@ -42,11 +45,12 @@ nodelist = (1:numNodes);
 
 %% PLOT
 figure('color','w')
-subplot(1,2,1)
+% OSLOM
+subplot(1,2,2)
 G = graph(RHsub);
 p = plot(G);
 % Communities 1 and 2 are merged by Louvain
-% Nodes 7 represent overlapping nodes
+% Nodes 7 represent overlapping nodes (between communities 1 and 2)
 nodes1 = nodelist(ocomm_list==1);
 nodes2 = nodelist(ocomm_list==2);
 nodes7 = nodelist(ocomm_list==7);
@@ -60,7 +64,8 @@ p.NodeFontSize = 0.5;
 colormap(jet);
 title('OSLOM');
 
-subplot(1,2,2)
+% LOUVAIN
+subplot(1,2,1)
 G = graph(RHsub);
 p = plot(G);
 p.MarkerSize = 20;
