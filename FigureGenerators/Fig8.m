@@ -1,3 +1,8 @@
+% -------------------------------------------------------------------------------
+%% REPRODUCING FIG 8
+%-------------------------------------------------------------------------------
+
+%% LOAD DATA
 % Loading Right hemisphere connectome
 load('RH.mat')
 % Loading community structure as determined by Louvain
@@ -5,24 +10,27 @@ load('louvaincomm.mat');
 % Loading community structure as determined by OSLOM
 load('oslomcomm.mat');
 
-% Keeping all edges that connect to node 63 (which is the target node to visualize based on Fig7)
+%% FILTER
+% Keeping all edges that connect to node 63 (which is the target node to visualize based on Fig. 7)
 keepNode = RH(63,:) > 0;
 keepNode(63) = 1;
 RHsub = RH(keepNode, keepNode);
-nnodes = size(RHsub,1);
+numNodes = size(RHsub,1);
 
-% Community assignments by Louvain and OSLOM
+% Filter community assignments by Louvain and OSLOM
 lcomm = louvaincomm(keepNode);
 ocomm = oslomcomm(keepNode,:);
+
+%% LIST
 % Creating a list with community IDs since OSLOM output is in the form of
 % one-hot matrix
 max_comm = size(ocomm,2);
-ocomm_list = zeros(nnodes,1);
-for i = 1:nnodes
+ocomm_list = zeros(numNodes,1);
+for i = 1:numNodes
     % Community assignments for ith node
     comms_i = find(ocomm(i,:));
     ncomms_i = size(comms_i,2);
-    if ncomms_i>1
+    if ncomms_i > 1
         % Overlapping node
         ocomm_list(i) = max_comm+1;
     else
@@ -30,9 +38,11 @@ for i = 1:nnodes
     end
 end
 
-nodelist = (1:1:nnodes);
+nodelist = (1:numNodes);
 
-figure();
+%% PLOT
+figure('color','w')
+subplot(1,2,1)
 G = graph(RHsub);
 p = plot(G);
 % Communities 1 and 2 are merged by Louvain
@@ -50,7 +60,7 @@ p.NodeFontSize = 0.5;
 colormap(jet);
 title('OSLOM');
 
-figure();
+subplot(1,2,2)
 G = graph(RHsub);
 p = plot(G);
 p.MarkerSize = 20;
