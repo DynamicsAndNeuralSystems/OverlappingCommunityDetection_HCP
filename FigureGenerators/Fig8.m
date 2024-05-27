@@ -55,13 +55,14 @@ figure('color','w')
 subplot(1,2,2)
 G = graph(RHsub);
 p = plot(G);
+
+
 % Communities 1 and 2 are merged by Louvain
 % Nodes 7 represent overlapping nodes (between communities 1 and 2)
 nodes1 = nodelist(ocomm_list==1);
 nodes2 = nodelist(ocomm_list==2);
 nodes7 = nodelist(ocomm_list==7);
 highlight(p,nodelist, 'NodeColor', [0.9,0.9,0.9]);
-highlight(p,nodes1, 'NodeColor', [100/256, 199/256, 232/256]);
 highlight(p,nodes7, 'NodeColor', [128/255, 0, 0]);
 highlight(p,nodes2, 'NodeColor', [200/256, 127/256, 14/256]);
 p.MarkerSize = 20;
@@ -74,6 +75,7 @@ title('OSLOM');
 subplot(1,2,1)
 G = graph(RHsub);
 p = plot(G);
+
 p.MarkerSize = 20;
 p.EdgeColor = [0.7, 0.7, 0.7];
 % Highlighting the nodes belong to community 2 which is split into several

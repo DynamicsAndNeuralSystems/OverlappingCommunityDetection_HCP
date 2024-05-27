@@ -8,7 +8,7 @@ f = figure('color','w');
 
 % Connectome visualisation
 subplot(2,3,[1,2,4,5]); axis('square')
-PlotConnectome(RH,false,true);
+PlotConnectome(RH,true,false);
 
 %-------------------------------------------------------------------------------
 % Degree vs strength plot
