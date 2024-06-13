@@ -1,7 +1,7 @@
 %-------------------------
 % ------------------------------------------------------
 % Load benchmark network data
-rng('default')
+rng(0,'twister')
 storedBenchmark = fullfile(GiveMeFile('OCDA_toolbox'),'Computation','Conversions','networks');
 networkDataFile = fullfile(storedBenchmark,'network56.dat');
 nodeLabelDataFile = fullfile(storedBenchmark,'community56.dat');
