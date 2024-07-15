@@ -2,18 +2,18 @@
 load('RH.mat');
 
 %load Louvain community labels for RH connectome
-load('louvaincomm.mat');
+load('louvaincomm_Rubinov.mat');
 % This was generated using fast-consensus code from Tandon et. al. (the
 % code is no more publically available)
 % The other option is to use Mika Rubinov's code:
 % peripheral/community_louvain(RH, 1);
 
 %Calculate Participation Coefficient
-P = participation_coef(RH,louvaincomm);
+P = participation_coef(RH,louvaincomm_Rubinov);
 louvain_P = P;
 
 % Calculate within-module degree z-scored
-z = module_degree_zscore(RH, louvaincomm);
+z = module_degree_zscore(RH, louvaincomm_Rubinov);
 louvain_z = z;
 
 % subplot(1,2,1); axis square;
