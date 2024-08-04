@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='216.00pt' height='288.00pt' viewBox='0 0 216.00 288.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: none;'/>
+<defs>
+  <clipPath id='cpMC4wMHwyMTYuMDB8MC4wMHwyODguMDA='>
+    <rect x='0.00' y='0.00' width='216.00' height='288.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHwyMTYuMDB8MC4wMHwyODguMDA=)'>
+</g>
+<defs>
+  <clipPath id='cpNDQuNDB8MjA5LjAzfDYuOTd8MTkxLjMx'>
+    <rect x='44.40' y='6.97' width='164.63' height='184.33' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNDQuNDB8MjA5LjAzfDYuOTd8MTkxLjMx)'>
+<circle cx='155.60' cy='104.67' r='2.17' style='stroke-width: 0.71; stroke: #DE8C00; fill: #DE8C00;' />
+<circle cx='155.60' cy='145.98' r='2.17' style='stroke-width: 0.71; stroke: #DE8C00; fill: #DE8C00;' />
+<circle cx='201.54' cy='147.87' r='2.17' style='stroke-width: 0.71; stroke: #DE8C00; fill: #DE8C00;' />
+<circle cx='201.54' cy='124.15' r='2.17' style='stroke-width: 0.71; stroke: #DE8C00; fill: #DE8C00;' />
+<circle cx='51.88' cy='54.58' r='2.17' style='stroke-width: 0.71; stroke: #FF64B0; fill: #FF64B0;' />
+<circle cx='51.88' cy='182.93' r='2.17' style='stroke-width: 0.71; stroke: #FF64B0; fill: #FF64B0;' />
+<circle cx='60.12' cy='15.35' r='2.17' style='stroke-width: 0.71; stroke: #FF64B0; fill: #FF64B0;' />
+<circle cx='60.12' cy='38.31' r='2.17' style='stroke-width: 0.71; stroke: #FF64B0; fill: #FF64B0;' />
+<circle cx='115.75' cy='136.65' r='2.17' style='stroke-width: 0.71; stroke: #00B4F0; fill: #00B4F0;' />
+<circle cx='115.75' cy='128.25' r='2.17' style='stroke-width: 0.71; stroke: #00B4F0; fill: #00B4F0;' />
+<circle cx='78.92' cy='57.21' r='2.17' style='stroke-width: 0.71; stroke: #00C08B; fill: #00C08B;' />
+<circle cx='78.92' cy='121.78' r='2.17' style='stroke-width: 0.71; stroke: #00C08B; fill: #00C08B;' />
+<circle cx='103.68' cy='114.20' r='2.17' style='stroke-width: 0.71; stroke: #7CAE00; fill: #7CAE00;' />
+<circle cx='103.68' cy='56.98' r='2.17' style='stroke-width: 0.71; stroke: #7CAE00; fill: #7CAE00;' />
+<circle cx='61.16' cy='34.24' r='2.17' style='stroke-width: 0.71; stroke: #7CAE00; fill: #7CAE00;' />
+<circle cx='61.16' cy='34.18' r='2.17' style='stroke-width: 0.71; stroke: #7CAE00; fill: #7CAE00;' />
+<circle cx='108.25' cy='157.69' r='2.17' style='stroke-width: 0.71; stroke: #7CAE00; fill: #7CAE00;' />
+<circle cx='108.25' cy='60.38' r='2.17' style='stroke-width: 0.71; stroke: #7CAE00; fill: #7CAE00;' />
+<circle cx='58.71' cy='46.74' r='2.17' style='stroke-width: 0.71; stroke: #C77CFF; fill: #C77CFF;' />
+<circle cx='58.71' cy='65.55' r='2.17' style='stroke-width: 0.71; stroke: #C77CFF; fill: #C77CFF;' />
+<circle cx='83.14' cy='37.94' r='2.17' style='stroke-width: 0.71; stroke: #7CAE00; fill: #7CAE00;' />
+<circle cx='83.14' cy='146.14' r='2.17' style='stroke-width: 0.71; stroke: #7CAE00; fill: #7CAE00;' />
+</g>
+<g clip-path='url(#cpMC4wMHwyMTYuMDB8MC4wMHwyODguMDA=)'>
+<polyline points='44.40,191.31 44.40,6.97 ' style='stroke-width: 1.07; stroke-linecap: square;' />
+<text x='37.92' y='130.63' text-anchor='end' style='font-size: 14.00px; font-family: "Arial";' textLength='12.45px' lengthAdjust='spacingAndGlyphs'>-1</text>
+<text x='37.92' y='62.22' text-anchor='end' style='font-size: 14.00px; font-family: "Arial";' textLength='7.78px' lengthAdjust='spacingAndGlyphs'>0</text>
+<polyline points='40.91,125.61 44.40,125.61 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='40.91,57.20 44.40,57.20 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='44.40,191.31 209.03,191.31 ' style='stroke-width: 1.07; stroke-linecap: square;' />
+<polyline points='68.98,194.79 68.98,191.31 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='109.19,194.79 109.19,191.31 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='149.40,194.79 149.40,191.31 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='189.61,194.79 189.61,191.31 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<text x='68.98' y='207.82' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='19.45px' lengthAdjust='spacingAndGlyphs'>0.0</text>
+<text x='109.19' y='207.82' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='19.45px' lengthAdjust='spacingAndGlyphs'>0.1</text>
+<text x='149.40' y='207.82' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='19.45px' lengthAdjust='spacingAndGlyphs'>0.2</text>
+<text x='189.61' y='207.82' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='19.45px' lengthAdjust='spacingAndGlyphs'>0.3</text>
+<text x='126.71' y='225.88' text-anchor='middle' style='font-size: 16.00px; font-family: "Arial";' textLength='265.03px' lengthAdjust='spacingAndGlyphs'>Change in Participation Coefficient, P</text>
+<text transform='translate(18.45,99.14) rotate(-90)' text-anchor='middle' style='font-size: 16.00px; font-family: "Arial";' textLength='258.79px' lengthAdjust='spacingAndGlyphs'>Change in Within-module strength, z</text>
+<circle cx='52.07' cy='251.04' r='2.17' style='stroke-width: 0.71; stroke: #DE8C00; fill: #DE8C00;' />
+<circle cx='52.07' cy='273.35' r='2.17' style='stroke-width: 0.71; stroke: #7CAE00; fill: #7CAE00;' />
+<circle cx='303.81' cy='251.04' r='2.17' style='stroke-width: 0.71; stroke: #00B4F0; fill: #00B4F0;' />
+<circle cx='303.81' cy='273.35' r='2.17' style='stroke-width: 0.71; stroke: #FF64B0; fill: #FF64B0;' />
+<circle cx='512.19' cy='251.04' r='2.17' style='stroke-width: 0.71; stroke: #C77CFF; fill: #C77CFF;' />
+<circle cx='512.19' cy='273.35' r='2.17' style='stroke-width: 0.71; stroke: #00C08B; fill: #00C08B;' />
+<text x='66.71' y='255.34' style='font-size: 12.00px; font-family: "Arial";' textLength='222.45px' lengthAdjust='spacingAndGlyphs'>Anterior frontal + cingulate and adj. cortex</text>
+<text x='66.71' y='277.66' style='font-size: 12.00px; font-family: "Arial";' textLength='177.09px' lengthAdjust='spacingAndGlyphs'>Cingulate and adj. cortex + visual</text>
+<text x='318.45' y='255.34' style='font-size: 12.00px; font-family: "Arial";' textLength='161.73px' lengthAdjust='spacingAndGlyphs'>Fronto-parietal + somatomotor</text>
+<text x='318.45' y='277.66' style='font-size: 12.00px; font-family: "Arial";' textLength='179.09px' lengthAdjust='spacingAndGlyphs'>Insula and post. temporal + visual</text>
+<text x='526.83' y='255.34' style='font-size: 12.00px; font-family: "Arial";' textLength='219.77px' lengthAdjust='spacingAndGlyphs'>Somatomotor + insula and post. temporal</text>
+<text x='526.83' y='277.66' style='font-size: 12.00px; font-family: "Arial";' textLength='120.39px' lengthAdjust='spacingAndGlyphs'>Visual + fronto-parietal</text>
+</g>
+</svg>

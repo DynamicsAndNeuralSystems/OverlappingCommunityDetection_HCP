@@ -1,0 +1,181 @@
+label,module,overlapping
+R_SFL_ROI,Anterior frontal,Non-overlapping
+R_p32_ROI,Anterior frontal,Non-overlapping
+R_10r_ROI,Anterior frontal,Non-overlapping
+R_47m_ROI,Anterior frontal,Non-overlapping
+R_8Av_ROI,Anterior frontal,Non-overlapping
+R_8Ad_ROI,Anterior frontal,Non-overlapping
+R_8BL_ROI,Anterior frontal,Non-overlapping
+R_9p_ROI,Anterior frontal,Non-overlapping
+R_10d_ROI,Anterior frontal,Non-overlapping
+R_a47r_ROI,Anterior frontal,Non-overlapping
+R_46_ROI,Anterior frontal,Non-overlapping
+R_9-46d_ROI,Anterior frontal,Non-overlapping
+R_9a_ROI,Anterior frontal,Non-overlapping
+R_10v_ROI,Anterior frontal,Non-overlapping
+R_a10p_ROI,Anterior frontal,Non-overlapping
+R_s6-8_ROI,Anterior frontal,Non-overlapping
+R_FOP4_ROI,Anterior frontal,Non-overlapping
+R_s32_ROI,Anterior frontal,Non-overlapping
+R_p10p_ROI,Anterior frontal,Non-overlapping
+R_V1_ROI,Visual,Non-overlapping
+R_MST_ROI,Visual,Non-overlapping
+R_V6_ROI,Visual,Non-overlapping
+R_V2_ROI,Visual,Non-overlapping
+R_V3_ROI,Visual,Non-overlapping
+R_V4_ROI,Visual,Non-overlapping
+R_V8_ROI,Visual,Non-overlapping
+R_V3A_ROI,Visual,Non-overlapping
+R_V7_ROI,Visual,Non-overlapping
+R_IPS1_ROI,Visual,Non-overlapping
+R_FFC_ROI,Visual,Non-overlapping
+R_V3B_ROI,Visual,Non-overlapping
+R_LO1_ROI,Visual,Non-overlapping
+R_LO2_ROI,Visual,Non-overlapping
+R_PIT_ROI,Visual,Non-overlapping
+R_MT_ROI,Visual,Non-overlapping
+R_7PL_ROI,Visual,Non-overlapping
+R_MIP_ROI,Visual,Non-overlapping
+R_11l_ROI,Visual,Non-overlapping
+R_OFC_ROI,Visual,Non-overlapping
+R_47s_ROI,Visual,Non-overlapping
+R_52_ROI,Visual,Non-overlapping
+R_TA2_ROI,Visual,Non-overlapping
+R_Pir_ROI,Visual,Non-overlapping
+R_AAIC_ROI,Visual,Non-overlapping
+R_EC_ROI,Visual,Non-overlapping
+R_PreS_ROI,Visual,Non-overlapping
+R_H_ROI,Visual,Non-overlapping
+R_ProS_ROI,Visual,Non-overlapping
+R_STGa_ROI,Visual,Non-overlapping
+R_PHA3_ROI,Visual,Non-overlapping
+R_STSda_ROI,Visual,Non-overlapping
+R_TGd_ROI,Visual,Non-overlapping
+R_TE1a_ROI,Visual,Non-overlapping
+R_TF_ROI,Visual,Non-overlapping
+R_PH_ROI,Visual,Non-overlapping
+R_TPOJ3_ROI,Visual,Non-overlapping
+R_DVT_ROI,Visual,Non-overlapping
+R_PGp_ROI,Visual,Non-overlapping
+R_IP0_ROI,Visual,Non-overlapping
+R_V6A_ROI,Visual,Non-overlapping
+R_VMV1_ROI,Visual,Non-overlapping
+R_VMV3_ROI,Visual,Non-overlapping
+R_PHA2_ROI,Visual,Non-overlapping
+R_V4t_ROI,Visual,Non-overlapping
+R_FST_ROI,Visual,Non-overlapping
+R_V3CD_ROI,Visual,Non-overlapping
+R_LO3_ROI,Visual,Non-overlapping
+R_VMV2_ROI,Visual,Non-overlapping
+R_VVC_ROI,Visual,Non-overlapping
+R_pOFC_ROI,Visual,Non-overlapping
+R_PoI1_ROI,Visual,Non-overlapping
+R_TGv_ROI,Visual,Non-overlapping
+R_MBelt_ROI,Visual,Non-overlapping
+R_STSva_ROI,Visual,Non-overlapping
+R_PI_ROI,Visual,Non-overlapping
+R_4_ROI,Somatomotor,Non-overlapping
+R_3b_ROI,Somatomotor,Non-overlapping
+R_FEF_ROI,Somatomotor,Non-overlapping
+R_PEF_ROI,Somatomotor,Non-overlapping
+R_55b_ROI,Somatomotor,Non-overlapping
+R_5m_ROI,Somatomotor,Non-overlapping
+R_5L_ROI,Somatomotor,Non-overlapping
+R_7AL_ROI,Somatomotor,Non-overlapping
+R_6ma_ROI,Somatomotor,Non-overlapping
+R_7PC_ROI,Somatomotor,Non-overlapping
+R_LIPv_ROI,Somatomotor,Non-overlapping
+R_1_ROI,Somatomotor,Non-overlapping
+R_2_ROI,Somatomotor,Non-overlapping
+R_3a_ROI,Somatomotor,Non-overlapping
+R_6d_ROI,Somatomotor,Non-overlapping
+R_6mp_ROI,Somatomotor,Non-overlapping
+R_6v_ROI,Somatomotor,Non-overlapping
+R_6r_ROI,Somatomotor,Non-overlapping
+R_LIPd_ROI,Somatomotor,Non-overlapping
+R_6a_ROI,Somatomotor,Non-overlapping
+R_i6-8_ROI,Somatomotor,Non-overlapping
+R_43_ROI,Somatomotor,Non-overlapping
+R_OP4_ROI,Somatomotor,Non-overlapping
+R_OP2-3_ROI,Somatomotor,Non-overlapping
+R_FOP1_ROI,Somatomotor,Non-overlapping
+R_FOP3_ROI,Somatomotor,Non-overlapping
+R_FOP2_ROI,Somatomotor,Non-overlapping
+R_PFt_ROI,Somatomotor,Non-overlapping
+R_AIP_ROI,Somatomotor,Non-overlapping
+R_IP2_ROI,Somatomotor,Non-overlapping
+R_IP1_ROI,Somatomotor,Non-overlapping
+R_PFop_ROI,Somatomotor,Non-overlapping
+R_PF_ROI,Somatomotor,Non-overlapping
+R_PCV_ROI,Cingulate and adj. cortex,Non-overlapping
+R_7Pm_ROI,Cingulate and adj. cortex,Non-overlapping
+R_7m_ROI,Cingulate and adj. cortex,Non-overlapping
+R_POS1_ROI,Cingulate and adj. cortex,Non-overlapping
+R_23d_ROI,Cingulate and adj. cortex,Non-overlapping
+R_v23ab_ROI,Cingulate and adj. cortex,Non-overlapping
+R_d23ab_ROI,Cingulate and adj. cortex,Non-overlapping
+R_31pv_ROI,Cingulate and adj. cortex,Non-overlapping
+R_5mv_ROI,Cingulate and adj. cortex,Non-overlapping
+R_23c_ROI,Cingulate and adj. cortex,Non-overlapping
+R_24dd_ROI,Cingulate and adj. cortex,Non-overlapping
+R_24dv_ROI,Cingulate and adj. cortex,Non-overlapping
+R_SCEF_ROI,Cingulate and adj. cortex,Non-overlapping
+R_p24pr_ROI,Cingulate and adj. cortex,Non-overlapping
+R_33pr_ROI,Cingulate and adj. cortex,Non-overlapping
+R_a24pr_ROI,Cingulate and adj. cortex,Non-overlapping
+R_p32pr_ROI,Cingulate and adj. cortex,Non-overlapping
+R_a24_ROI,Cingulate and adj. cortex,Non-overlapping
+R_d32_ROI,Cingulate and adj. cortex,Non-overlapping
+R_10pp_ROI,Cingulate and adj. cortex,Non-overlapping
+R_31pd_ROI,Cingulate and adj. cortex,Non-overlapping
+R_31a_ROI,Cingulate and adj. cortex,Non-overlapping
+R_25_ROI,Cingulate and adj. cortex,Non-overlapping
+R_a32pr_ROI,Cingulate and adj. cortex,Non-overlapping
+R_p24_ROI,Cingulate and adj. cortex,Non-overlapping
+R_A1_ROI,Insula and post. temporal,Non-overlapping
+R_PSL_ROI,Insula and post. temporal,Non-overlapping
+R_STV_ROI,Insula and post. temporal,Non-overlapping
+R_7Am_ROI,Insula and post. temporal,Non-overlapping
+R_VIP_ROI,Insula and post. temporal,Non-overlapping
+R_45_ROI,Insula and post. temporal,Non-overlapping
+R_47l_ROI,Insula and post. temporal,Non-overlapping
+R_OP1_ROI,Insula and post. temporal,Non-overlapping
+R_RI_ROI,Insula and post. temporal,Non-overlapping
+R_PFcm_ROI,Insula and post. temporal,Non-overlapping
+R_MI_ROI,Insula and post. temporal,Non-overlapping
+R_AVI_ROI,Insula and post. temporal,Non-overlapping
+R_PBelt_ROI,Insula and post. temporal,Non-overlapping
+R_STSdp_ROI,Insula and post. temporal,Non-overlapping
+R_STSvp_ROI,Insula and post. temporal,Non-overlapping
+R_TPOJ1_ROI,Insula and post. temporal,Non-overlapping
+R_Ig_ROI,Insula and post. temporal,Non-overlapping
+R_FOP5_ROI,Insula and post. temporal,Non-overlapping
+R_LBelt_ROI,Insula and post. temporal,Non-overlapping
+R_TE1m_ROI,Insula and post. temporal,Non-overlapping
+R_8C_ROI,Fronto-parietal,Non-overlapping
+R_44_ROI,Fronto-parietal,Non-overlapping
+R_IFJa_ROI,Fronto-parietal,Non-overlapping
+R_IFJp_ROI,Fronto-parietal,Non-overlapping
+R_IFSp_ROI,Fronto-parietal,Non-overlapping
+R_IFSa_ROI,Fronto-parietal,Non-overlapping
+R_p9-46v_ROI,Fronto-parietal,Non-overlapping
+R_a9-46v_ROI,Fronto-parietal,Non-overlapping
+R_TE1p_ROI,Fronto-parietal,Non-overlapping
+R_TE2a_ROI,Fronto-parietal,Non-overlapping
+R_TE2p_ROI,Fronto-parietal,Non-overlapping
+R_PHT_ROI,Fronto-parietal,Non-overlapping
+R_TPOJ2_ROI,Fronto-parietal,Non-overlapping
+R_PGi_ROI,Fronto-parietal,Non-overlapping
+R_p47r_ROI,Fronto-parietal,Non-overlapping
+R_PFm_ROI,Fronto-parietal + somatomotor,Overlapping
+R_8BM_ROI,Anterior frontal + cingulate and adj. cortex,Overlapping
+R_9m_ROI,Anterior frontal + cingulate and adj. cortex,Overlapping
+R_RSC_ROI,Cingulate and adj. cortex + visual,Overlapping
+R_POS2_ROI,Cingulate and adj. cortex + visual,Overlapping
+R_PeEc_ROI,Cingulate and adj. cortex + visual,Overlapping
+R_PHA1_ROI,Cingulate and adj. cortex + visual,Overlapping
+R_A5_ROI,Insula and post. temporal + visual,Overlapping
+R_A4_ROI,Insula and post. temporal + visual,Overlapping
+R_PoI2_ROI,Somatomotor + insula and post. temporal,Overlapping
+R_PGs_ROI,Visual + fronto-parietal,Overlapping
+R_13l_ROI,Unassigned,Unassigned

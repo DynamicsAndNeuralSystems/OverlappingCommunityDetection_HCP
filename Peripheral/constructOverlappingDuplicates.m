@@ -1,4 +1,4 @@
-function [adjNew,commLabelsNew,iOverlappingNew] = constructOverlappingDuplicates(adj,iOverlapping,commLabels)
+function [adjNew,commLabelsNew,iOverlappingNew,nodeListTracking] = constructOverlappingDuplicates(adj,iOverlapping,commLabels)
 
 numNodes = length(adj);
 numOverlapping = length(iOverlapping);
@@ -7,6 +7,11 @@ newNodes = numNodes + numOverlapping;
 % Duplicate the main adj
 adjNew = zeros(newNodes,newNodes);
 adjNew(1:numNodes,1:numNodes) = adj;
+
+% Create list with node indices from original oslom_mat
+nodeListTracking = zeros(newNodes,1);
+nodeListTracking(1:numNodes) = 1:numNodes;
+nodeListTracking(numNodes+1:newNodes) = iOverlapping;
 
 % Add the overlapping nodes as additional nodes
 rangeOrig = 1:numNodes;
