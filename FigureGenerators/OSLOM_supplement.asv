@@ -1,0 +1,56 @@
+%% Load data 
+data_path = '/Users/abry4213/github/OverlappingCommunityDetection_HCP/Results/';
+% RH = load(sprintf('%s/RH.mat', data_path)).RH;
+
+%%
+% Add OCD code to path
+OCD_code_path = '/Users/abry4213/github/OverlappingCommunityDetection/';
+addpath(OCD_code_path);
+
+% Create undirected adjacency matrix from the RH connectome
+undirected_adj_mat = Mat2Undir(RH);
+
+% Find the number of nodes
+num_nodes = size(RH, 1);
+
+% Use 100 iterations
+num_iters = 10;
+
+% Start with tolerance = 0.3
+% Tol = 0.01:0.01:0.05;
+Tol = 0.3;
+
+% Define OSLOM code path
+OSLOM_code_path ='/Users/abry4213/Downloads/OSLOM2';
+
+%% 
+% Save the undirected adjacency matrix to a temporary txt file
+fid = fopen(sprintf('%s/OSLOM_validation/tempData.txt', data_path), 'w');
+fprintf(fid,'%g\t%g\t%f\n', undirected_adj_mat');
+fclose(fid);
+
+%%
+save(sprintf('%s/OSLOM_validation/tempData.dat', data_path), 'undirected_adj_mat','-ascii');
+
+%%
+
+%-------------------------------------------------------------------------------
+% Run OSLOM
+%-------------------------------------------------------------------------------
+Tol = 0.3;
+num_tol = length(Tol);
+fprintf(1,'Running OSLOM on the network across %u tolerances\n',num_tol);
+for t = 1:num_tol
+    tol = Tol(t);
+    % Run the command to start the OSLOM algorithm:
+    % system(sprintf('%s/oslom_undir -f %s/OSLOM_validation/tempData.txt -w -r %g -t %f', OSLOM_code_path, data_path, num_iters, tol));
+    system(sprintf('%s/oslom_undir -f example.d -w -r %g -t %f', OSLOM_code_path, data_path, num_iters, tol));
+
+    % Move/rename the important data to base location:
+    system(sprintf('mv tp %s/OSLOM_validation/OSLOM_tol_%g.txt', data_path, tol));
+    
+    % % Remove unneeded files:
+    % system(sprintf('rm -r %s/OSLOM_validation/tempData.txt_oslo_files', data_path));
+
+end
+
