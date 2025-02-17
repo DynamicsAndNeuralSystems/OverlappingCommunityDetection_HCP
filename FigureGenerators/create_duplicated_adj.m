@@ -1,4 +1,4 @@
-function [adjNew,commLabelsNew,iOverlappingNew] = constructOverlappingDuplicates(RH_in, RH_out, oslom_mat, github_path)
+function [adjNew,commLabelsNew,iOverlappingNew] = create_duplicated_adj(RH_in, RH_out, oslom_labels, github_path)
     % Add github path to path
     addpath(genpath(github_path));
 
