@@ -32,4 +32,4 @@ for node = 1:size(oslomcomm,1)
 
     output{node,1} = node_labels{node,'Var2'}{1};
 end
-writecell(output,"Results/table_of_modules.csv")
+writecell(output,"data/table_of_modules.csv")

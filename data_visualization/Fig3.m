@@ -11,8 +11,8 @@ OCDA_HPC_repo_dir = fullfile(github_repo_base_dir, 'OverlappingCommunityDetectio
 OCDA_comp_repo_dir = fullfile(github_repo_base_dir, 'OverlappingCommunityDetection');
 
 % storedBenchmark = fullfile(GiveMeFile('OCDA_toolbox'),'Computation','Conversions','networks');
-networkDataFile = fullfile(OCDA_HPC_repo_dir, 'Results', 'networks', 'network56.dat');
-nodeLabelDataFile = fullfile(OCDA_HPC_repo_dir, 'Results', 'networks', 'community56.dat');
+networkDataFile = fullfile(OCDA_HPC_repo_dir, 'data', 'networks', 'network56.dat');
+nodeLabelDataFile = fullfile(OCDA_HPC_repo_dir, 'data', 'networks', 'community56.dat');
 
 % Run OCDAs on this benchmark
 load(networkDataFile,'network56')
@@ -24,7 +24,7 @@ cd(OCDA_comp_repo_dir);
 % Add path to OSLOM installation ()
 addpath(fullfile(OCDA_comp_repo_dir, 'SourceCode', 'OSLOM'));
 sourceCodePath = fullfile(OCDA_comp_repo_dir, 'SourceCode');
-outputPath = fullfile(OCDA_HPC_repo_dir, 'Results');
+outputPath = fullfile(OCDA_HPC_repo_dir, 'data');
 OLCD_Compute(network56, {'OSLOM', 'Shen', 'NNMF', 'Infomap', 'Jerry'}, true, nodeLabelDataFile, sourceCodePath, outputPath);
 
 % rename output file

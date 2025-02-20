@@ -8,7 +8,7 @@ from fastconsensus.core import construct_sparse_consensus_matrix,threshold_matri
 import igraph as ig
 
 # Load in connectivity data
-RH_connectivity_data = pd.DataFrame(scipy.io.loadmat('../Results/RH.mat')['RH'])
+RH_connectivity_data = pd.DataFrame(scipy.io.loadmat('../data/RH.mat')['RH'])
 
 # Define Louvain + consensus clustering parameters
 n_partitions=100
@@ -61,4 +61,4 @@ final_partition = {v: final_partition.membership[v] for v in range(Glasser_RH_gr
 louvain_consensus_modules = pd.DataFrame(final_partition.items(), columns=["Glasser_RH_ROI", "module"])
 
 # Write to CSV
-louvain_consensus_modules.to_csv('../Results/Louvain_Glasser_RH_SC_consensus_modules_gamma1.3.csv', index=False)
+louvain_consensus_modules.to_csv('../data/Louvain_Glasser_RH_SC_consensus_modules_gamma1.3.csv', index=False)

@@ -23,4 +23,4 @@ overlapping_node_indices = find(sum(OSLOM_final_results_wide > 0, 2)>1);
 
 %% Construct the overlapping duplicates
 [RH_with_duplicates,commLabelsNew,iOverlappingNew,nodeListTracking] = constructOverlappingDuplicates(RH,overlapping_node_indices,OSLOM_final_results_wide);
-save(sprintf('%s/Results/RH_new.mat', OCDA_HPC_repo_dir), "iOverlappingNew", "RH_with_duplicates", "nodeListTracking", "commLabelsNew");
+save(sprintf('%s/data/RH_new.mat', OCDA_HPC_repo_dir), "iOverlappingNew", "RH_with_duplicates", "nodeListTracking", "commLabelsNew");

@@ -19,7 +19,7 @@ echo "Now running OSLOM for seed $seed_num"
 # Define paths
 OSLOM_code_path=/project/hctsa/annie/software/OSLOM2
 data_path=/project/hctsa/annie/data/OCDA/
-RH_data_og=/project/hctsa/annie/github/OverlappingCommunityDetection_HCP/Results/RH.txt
+RH_data_og=/project/hctsa/annie/github/OverlappingCommunityDetection_HCP/data/RH.txt
 
 mkdir -p ${data_path}/OSLOM_seed_${seed_num}_iters_${num_iters}_tol_${tol}/
 cd ${data_path}/OSLOM_seed_${seed_num}_iters_${num_iters}_tol_${tol}/
