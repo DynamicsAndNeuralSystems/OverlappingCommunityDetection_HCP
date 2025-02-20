@@ -54,5 +54,8 @@ G = giveMeGroupAdj_variance(connectomes, dens);
 RH_full = G(hemiid==2, hemiid==2);
 RH_cortex = RH_full(1:180, 1:180);
 
-% Log-transform
-RH_cortex_log = log(RH_cortex);
+% Log-transform, final output is RH in RH.mat
+RH = log(RH_cortex);
+
+% Save the .mat file
+save('../Data/RH.mat', 'RH')
