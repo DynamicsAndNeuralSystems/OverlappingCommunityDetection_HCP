@@ -1,6 +1,6 @@
 %% Load data 
 data_path = '/Users/abry4213/data/OCDA/';
-RH = load(sprintf('%s/RH.mat', data_path)).RH;
+RH = load(sprintf('%s/HCP_Connectome/RH.mat', data_path)).RH;
 
 % Add OCD code to path
 OCD_code_path = '/Users/abry4213/github/OverlappingCommunityDetection/';
@@ -125,3 +125,10 @@ end
 % Save the results
 writematrix(ENMI_results_by_tol_sweep_across_seeds, sprintf("%s/OSLOM_results/ENMI_results_by_tol_sweep_across_seeds.csv", data_path))
 
+%%
+target_tol = 0.3;
+target_seed = 100;
+
+for iteration_num = 1:10
+
+end
