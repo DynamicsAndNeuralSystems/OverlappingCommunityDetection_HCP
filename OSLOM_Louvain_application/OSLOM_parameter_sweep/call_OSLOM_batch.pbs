@@ -1,0 +1,46 @@
+#!/bin/bash
+#PBS -j oe
+#PBS -l walltime=12:00:00
+#PBS -P hctsa
+#PBS -V
+
+# Check if user supplied a command-line argument
+if [ -z ${line_to_read+x} ]
+then
+    line_to_read=$PBS_ARRAY_INDEX
+fi
+
+seed_params=`sed -n "${line_to_read} p" $input_seeds_file`
+seed_array=($seed_params)
+
+seed_num=${seed_array[0]}
+echo "Now running OSLOM for seed $seed_num"
+
+# Define paths
+OSLOM_code_path=/project/hctsa/annie/software/OSLOM2
+data_path=/project/hctsa/annie/data/OCDA/
+RH_data_og=/project/hctsa/annie/github/OverlappingCommunityDetection_HCP/data/RH.txt
+
+mkdir -p ${data_path}/OSLOM_seed_${seed_num}_iters_${num_iters}_tol_${tol}/
+cd ${data_path}/OSLOM_seed_${seed_num}_iters_${num_iters}_tol_${tol}/
+
+RH_data_copy=${data_path}/OSLOM_seed_${seed_num}_iters_${num_iters}_tol_${tol}/RH.txt
+cp $RH_data_og $RH_data_copy
+
+# Define output file
+output_file=${data_path}/OSLOM_seed_${seed_num}_iters_${num_iters}_tol_${tol}.txt
+
+# Check if output file exists before running OSLOM
+if ! test -f $output_file; then
+	# Run OSLOM
+	$OSLOM_code_path/oslom_undir -f $RH_data_copy -w -r $num_iters -t $tol -seed $seed_num
+
+	# Move/rename important data to base location
+	mv tp $output_file
+
+	# Remove unneeded files
+	rm -r RH.txt_oslo_files
+fi
+
+# Remove the temporary directory
+rm -r ${data_path}/OSLOM_seed_${seed_num}_iters_${num_iters}_tol_${tol}/
