@@ -20,3 +20,5 @@ Other analyses not presented in the form of figures:
 The processed HCP group connectome (only cortical areas) can be found under `Results/RH.mat`.
 
 
+# Add connectome workbench to path, needed for downloading + analyzing neuromaps (first principal gradient of functional connectivity)
+os.environ['PATH'] = os.environ['PATH'] + ':/Applications/workbench/bin_macosx64'

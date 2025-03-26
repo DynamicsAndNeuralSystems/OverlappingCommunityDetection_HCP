@@ -1,8 +1,8 @@
 Module_Number,Module_Name,Color
-0,Retrosplenial + dorsomedial cortex,#f8766d
-5,Cingulate and parahippocampal,#e38900
-2_5,Visual + cingulate and parahippocampal,#c49a00
-0_2_5,Cingulate + visual + retrosplenial/dorsomedial,#99a800
+0,Dorsomedial cortex,#f8766d
+5,Limbic,#e38900
+2_5,Visual + limbic,#c49a00
+0_2_5,Limbic + visual + dorsomedial cortex,#99a800
 2,Visual,#53b400
 2_4,Visual + ventral attention and visual stream,#00bc56
 4,Ventral attention + visual stream,#00c094
@@ -11,5 +11,5 @@ Module_Number,Module_Name,Color
 3,Insula,#06a4ff
 1_6,Somatomotor + frontal pole,#a58aff
 6,Frontal pole,#df70f8
-0_6,Fronal pole + retrosplenial/dorsomedial,#fb61d7
-5_6,Frontal pole + cingulate and parahippocampal,#ff66a8
+0_6,Fronal pole + dorsomedial,#fb61d7
+5_6,Frontal pole + limbic,#ff66a8

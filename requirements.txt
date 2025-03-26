@@ -1,0 +1,13 @@
+bctpy==0.6.1
+fastconsensus==0.1.0
+matplotlib==3.10.1
+networkx==3.2.1
+neuromaps==0.0.5+38.gae3c88a
+nibabel==5.3.2
+numpy==2.2.4
+nxviz==0.7.6
+pandas==2.2.3
+python_igraph==0.11.8
+rpy2==3.5.17
+scikit_learn==1.6.1
+scipy==1.15.2
