@@ -1,3 +1,4 @@
 .DS_STORE
-data/HCP_Connectome
+data/HCP_Connectome/HCP*
+data/HCP_Connectome/RH_*
 /data/OSLOM_validation

@@ -1,6 +1,10 @@
 % Generate 1000 synthetic networks using generate_synthetic_networks.m,
 % Then compute extended normalized mutual information (ENMI) for
 % each of the 22 atatlmethods on each of the 1000 synthetic networks
+
+base_path = '/Users/abry4213/github/OverlappingCommunityDetection_HCP/generate_benchmark_networks/';
+cd(base_path);
+
 % Two arguments to generate_synthetic_networks: number of networks to generate and the directory to save the networks
 num_networks = 1000;
 network_output_dir = [fileparts(pwd), '/data/'];
@@ -39,4 +43,5 @@ for i = 1:10
     end
 end
 
-save(sprintf('%s/ENMI_Results/ENMI_mat.mat', network_output_dir),'ENMI_mat');
+%%
+% save('ENMI_mat.mat','ENMI_mat');

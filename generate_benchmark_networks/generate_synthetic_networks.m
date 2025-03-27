@@ -17,6 +17,16 @@ mkdir(sprintf('%s/networks', output_dir));
 mkdir(sprintf('%s/communities', output_dir));
 
 for i = 1:number
+   
+    % Define new file paths
+    newpath_network = sprintf('%s/networks/network%s.dat', output_dir, int2str(i));
+    newpath_comm = sprintf('%s/communities/community%s.dat', output_dir, int2str(i));
+
+    % Check if file exists
+    if isfile(newpath_network) && isfile(newpath_comm)
+        continue
+    end
+    
     % number of nodes
     N = 180;
 
@@ -49,10 +59,10 @@ for i = 1:number
                  ' -beta ', int2str(beta), ' -t1 ', int2str(t1), ' -t2 ', int2str(t2), ...
                  ' -on ', int2str(on), ' -om ', int2str(om), ' -muw ', num2str(muw), ' -mut ', num2str(mut)];
     system(gennet);
-    newpath_net = [sprintf('mv network.dat %s/networks/network', output_dir), int2str(i), '.dat'];
-    newpath_comm = [sprintf('mv community.dat %s/communities/community', output_dir), int2str(i), '.dat'];
-    system(newpath_net)
-    system(newpath_comm)
+
+    % Move generated files to designated output directory
+    system(sprintf('mv network.dat %s', newpath_network));
+    system(sprintf('mv community.dat %s', newpath_comm));
 end
 
 done = true;
