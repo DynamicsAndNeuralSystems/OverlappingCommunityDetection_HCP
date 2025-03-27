@@ -7,10 +7,11 @@ network_output_dir = [fileparts(pwd), '/data/'];
 generate_synthetic_networks(num_networks, network_output_dir);
 
 % Add computation code to path
-addpath(genpath('Computation'));
-addpath(genpath('SourceCode'));
+OCDA_evaluation_path = sprintf('%s/OCDA_evaluation', fileparts(pwd));
+addpath(genpath(fullfile(OCDA_evaluation_path, 'Computation')));
+addpath(genpath(fullfile(OCDA_evaluation_path, 'SourceCode')));
 
-sourceCodePath = sprintf('%s/SourceCode', pwd);
+sourceCodePath = fullfile(OCDA_evaluation_path, 'SourceCode');
 
 % Matrix to store ENMI values
 numMethods = 22;

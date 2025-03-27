@@ -58,4 +58,4 @@ RH_cortex = RH_full(1:180, 1:180);
 RH = log(RH_cortex);
 
 % Save the .mat file
-save('../Data/RH.mat', 'RH')
+save(sprintf('%s/RH.mat', diffusion_data_path), 'RH')

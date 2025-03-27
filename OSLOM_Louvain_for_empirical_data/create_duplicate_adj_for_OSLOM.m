@@ -1,13 +1,8 @@
-% USER TO CHANGE: github repo base dir
-github_repo_base_dir="/Users/abry4213/github/";
-
-% Load stored benchmark network results
-OCDA_HPC_repo_dir = fullfile(github_repo_base_dir, 'OverlappingCommunityDetection_HCP');
-OCDA_comp_repo_dir = fullfile(github_repo_base_dir, 'OverlappingCommunityDetection');
+% github repo base dir
+github_repo_base_dir=fileparts(pwd);
 
 % Add paths
-addpath(OCDA_HPC_repo_dir);
-addpath(OCDA_comp_repo_dir);
+addpath(genpath(github_repo_base_dir));
 
 %% Load connectivity data and OSLOM results
 
@@ -19,13 +14,13 @@ RH(92, :) = [];  % Remove row 92
 RH(:, 92) = [];  % Remove column 92
 
 % OSLOM community assignments -- 180x7
-OSLOM_final_results_wide = readmatrix(sprintf('%s/data/OSLOM30_final_module_assignments_wide_binary.csv', OCDA_HPC_repo_dir));
+OSLOM_final_results_wide = readmatrix(sprintf('%s/data/OSLOM30_final_module_assignments_wide_binary.csv', github_repo_base_dir));
 
 % Drop index 92
 OSLOM_final_results_wide(92, :) = [];  % Remove row 92
 
 % Load long version of OSLOM communities
-OSLOM_final_results_long = readtable(sprintf('%s/data/OSLOM30_final_module_assignments.csv', OCDA_HPC_repo_dir), 'Format','%d %s %s %s');
+OSLOM_final_results_long = readtable(sprintf('%s/data/OSLOM30_final_module_assignments.csv', github_repo_base_dir), 'Format','%d %s %s %s');
 original_community_labels = OSLOM_final_results_long.module;
 
 % Find indices of overlapping nodes
@@ -42,10 +37,10 @@ indices_to_repeat = overlapping_node_indices;
 num_of_repeats = num_communities_in_overlaps - 1;
 node_indices_original = OSLOM_final_results_long.node;
 
-[RH_with_repeats, node_indices_with_repeats] = annie_overlapping_duplicates(connectivity_mat, indices_to_repeat, num_of_repeats, node_indices_original);
+[RH_with_repeats, node_indices_with_repeats] = construct_overlapping_duplicates(connectivity_mat, indices_to_repeat, num_of_repeats, node_indices_original);
 
 % Save results
-save(sprintf('%s/data/RH_with_OSLOM_duplicates.mat', OCDA_HPC_repo_dir), "RH_with_repeats", "node_indices_with_repeats");
+save(sprintf('%s/data/RH_with_OSLOM_duplicates.mat', github_repo_base_dir), "RH_with_repeats", "node_indices_with_repeats");
 
 
 
