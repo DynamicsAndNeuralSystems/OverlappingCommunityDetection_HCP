@@ -1,6 +1,8 @@
 # Benchmarking overlapping community detection methods for applications in human connectomics
 
-This repository contains all code needed to reproduce analyses and visuals presented in our preprint, [Benchmarking overlapping community detection methods for applications in human connectomics](https://www.biorxiv.org/content/10.1101/2025.03.19.643839v1.full).
+This repository contains all code needed to reproduce analyses and visuals presented in our preprint, [Benchmarking overlapping community detection methods for applications in human connectomics](https://www.biorxiv.org/content/10.1101/2025.03.19.643839).
+
+![Network properties of the identified overlapping regions.](./network_header_image.png)
 
 # Data availability
 
@@ -76,7 +78,7 @@ Elements of this figure can be recreated by running the Jupyter notebook [Fig6_O
 
 ## Route 2: Re-computing benchmark network ensembles and applying OCDAs to both simulated + empirical data
 
-## Part 1: Simulating benchmark networks
+### Part 1: Simulating benchmark networks
 
 All code needed to generate and evaluate the synthetic benchmark network ensemble can be found in the [`generate_benchmark_networks/`](https://github.com/DynamicsAndNeuralSystems/OverlappingCommunityDetection_HCP/tree/main/generate_benchmark_networks) folder.
 
@@ -119,6 +121,5 @@ rm -r build/
 make
 ```
 
-## Part 2: Applying OSLOM-30 to the right cortical structural connectome
+### Part 2: Applying OSLOM-30 to the right cortical structural connectome
 
-## 
