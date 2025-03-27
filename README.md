@@ -54,11 +54,11 @@ os.environ['PATH'] = os.environ['PATH'] + ':/Applications/workbench/bin_macosx64
 
 ## Route 1: Using supplied pre-computed data to reproduce visuals
 
-All required data is provided to plug-and-play with the Jupyter notebooks in [`data_visualization/`](https://github.com/DynamicsAndNeuralSystems/OverlappingCommunityDetection_HCP/tree/main/data_visualization).
+All required data is provided to plug-and-play with the Jupyter notebooks (and some Matlab scripts) in [`data_visualization/`](https://github.com/DynamicsAndNeuralSystems/OverlappingCommunityDetection_HCP/tree/main/data_visualization).
 
 #### Figure 2: Human right cortical connectome properties
 
-Elements of this figure can be recreated by running the Jupyter notebook [Fig2_connectome_network_properties.ipynb](https://github.com/DynamicsAndNeuralSystems/OverlappingCommunityDetection_HCP/tree/main/data_visualization/Fig2_connectome_network_properties.ipynb).
+Elements of this figure can be recreated by running the Matlab script [Fig2_connectome_network_properties.m](https://github.com/DynamicsAndNeuralSystems/OverlappingCommunityDetection_HCP/blob/main/data_visualization/Fig2_connectome_network_properties.m).
 
 #### Figure 3: Comparing OCDA performances across benchmark ensemble, with a focus on network 56 as an example
 
