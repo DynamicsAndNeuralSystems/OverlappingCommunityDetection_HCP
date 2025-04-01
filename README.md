@@ -1,5 +1,7 @@
 # Benchmarking overlapping community detection methods for applications in human connectomics
 
+[![DOI](https://zenodo.org/badge/310204593.svg)](https://doi.org/10.5281/zenodo.15122627)
+
 This repository contains all code needed to reproduce analyses and visuals presented in our preprint, [Benchmarking overlapping community detection methods for applications in human connectomics](https://www.biorxiv.org/content/10.1101/2025.03.19.643839).
 
 ![Network properties of the identified overlapping regions.](./network_header_image.png)
