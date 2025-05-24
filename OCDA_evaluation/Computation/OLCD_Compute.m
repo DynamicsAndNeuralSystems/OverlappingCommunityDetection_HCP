@@ -1,4 +1,4 @@
-function Final = OLCD_Compute(networkAdj,methodList,isBenchmark,benchmarkFileName,sourceCodePath, outputPath)
+function [Final, computation_times] = OLCD_Compute(networkAdj,methodList,isBenchmark,benchmarkFileName,sourceCodePath, outputPath)
 % Computes a set of (overlapping) community-detection algorithms for a given input network
 %
 %---INPUTS:
@@ -68,6 +68,8 @@ end
 Final = struct('Date', date);
 Final.Network = Mat; % Saves the matrix of the network
 
+computation_times = struct('Date', date);
+
 %-------------------------------------------------------------------------------
 %% Benchmark
 %-------------------------------------------------------------------------------
@@ -88,24 +90,60 @@ fprintf(1,'Looping across %u OCDA methods.\n',numMethods);
 for m = 1:numMethods
     theMethod = methodList{m};
     switch theMethod
+        % Infomap
         case 'Infomap'
+            start_time = tic;
             Final.Infomap = call_infomap(DirList, numNodes, sourceCodePath);
+            duration = toc(start_time);
+
+            % Save how long Infomap took
+            computation_times.Infomap = duration;
+
+        % Speaker-listener propagation algorithm
         case 'SLPA'
+            start_time = tic;
             Final.Jerry = call_Jerry(Mat, numNodes, 120, 0.09, 1, 'probabilistic');
+            duration = toc(start_time);
+
+            % Save how long SLPA took
+            computation_times.SLPA = duration;
+
+        % Non-negative matrix factorization
         case 'NNMF'
             for thresh = [0.1,0.2,0.3,0.4]
+                start_time = tic;
                 Final.(sprintf('NNMF_%g', thresh*100)) = ...
                     call_NNMF(Mat, thresh);
+                duration = toc(start_time);
+
+                % Save how long NNMF at the corresponding threshold took
+                computation_times.(sprintf('NNMF_%g', thresh*100)) = duration;
             end
+
+        % Order statistics local optimization method
         case 'OSLOM'
             for tol = 0.1:0.1:1
+                start_time = tic;
                 Final.(sprintf('OSLOM_%g', tol*100)) = ...
                     call_OSLOM(Undir, numNodes, 100, tol, sourceCodePath, outputPath);
+                duration = toc(start_time);
+
+                % Save how long OSLOM at the corresponding threshold took
+                computation_times.(sprintf('OSLOM_%g', tol*100)) = duration;
+
             end
+
+        % Clique percolation
         case 'Clique'
             for clique_size = [3,4,5,6,7,9]
+                start_time = tic;
                 Final.(sprintf('Clique_%g', clique_size)) = ...
                     call_Shen(0.5*(Mat+Mat'), numNodes, clique_size, 1.3, 0);
+                duration = toc(start_time);
+
+                % Save how long clique percolation at the corresponding threshold took
+                computation_times.(sprintf('Clique_%g', clique_size)) = duration;
+
             end
     end
 end

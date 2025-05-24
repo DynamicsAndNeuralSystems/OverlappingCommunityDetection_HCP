@@ -2,3 +2,4 @@
 data/HCP_Connectome/HCP*
 data/HCP_Connectome/RH_*
 /data/OSLOM_validation
+/data/ENMI_results/individual_networks/*

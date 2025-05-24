@@ -2,9 +2,14 @@
 data_path = '/Users/abry4213/data/OCDA/';
 RH = load(sprintf('%s/HCP_Connectome/RH.mat', data_path)).RH;
 
-% Add OCD code to path
-OCD_code_path = '/Users/abry4213/github/OverlappingCommunityDetection/';
-addpath(OCD_code_path);
+% Add computation code to path
+OCDA_evaluation_path = sprintf('%s/OCDA_evaluation', pwd);
+addpath(genpath(fullfile(OCDA_evaluation_path)));
+addpath(genpath(fullfile(OCDA_evaluation_path, 'Computation')));
+addpath(genpath(fullfile(OCDA_evaluation_path, 'Computation', 'Conversions')));
+addpath(genpath(fullfile(OCDA_evaluation_path, 'SourceCode')));
+addpath(genpath(fullfile(fileparts(pwd), 'Peripheral')));
+sourceCodePath = fullfile(OCDA_evaluation_path, 'SourceCode');
 
 %%
 % There are 180 nodes in the network
@@ -30,22 +35,21 @@ fclose(fid);
 ENMI_results_by_tol_sweep_across_seeds = zeros(100000, 4);
 row_counter=1;
 
+%%% ITERATE OVER TOLERANCES FOR EACH AS TARGET %%%
 for target_tol_i = 1:length(tol_list)
     target_tol = tol_list(target_tol_i);
-
-    %%% ITERATE OVER TOLERANCES FOR EACH AS TARGET %%%
     for target_seed_i = 1:length(seed_list)
         target_seed = seed_list(target_seed_i);
         
         % Load in results for this target seed at this target tolerance
-        OSLOM_target_tol_target_seed_file = sprintf('%s/OSLOM_results/OSLOM_seed_%d_iters_100_tol_%0.2f.txt', ...
+        OSLOM_target_tol_target_seed_file = sprintf('%s/OSLOM_validation/OSLOM_seed_%d_iters_100_tol_%0.2f.txt', ...
                                     data_path, target_seed, target_tol);
-
+    
         fid_target_tol_target_seed = fopen(OSLOM_target_tol_target_seed_file);
         % Scans the text, creating a list, with 0s where it is the next module
         A_target_tol_target_seed = textscan(fid_target_tol_target_seed, '%d', 'CommentStyle', '#', 'Delimiter', {' ', '\n'});
         A_target_tol_target_seed = A_target_tol_target_seed{1}; % Sets it as the matrix, gets rid of the cell
-
+    
         % Close file
         fclose(fid_target_tol_target_seed);
         
@@ -69,19 +73,19 @@ for target_tol_i = 1:length(tol_list)
             % Equally distributes the communities
             OSLOM_target_tol_target_seed_res(node_i, :) = OSLOM_target_tol_target_seed_res(node_i, :)/sum(OSLOM_target_tol_target_seed_res(node_i, :));
         end
-
+    
         %%% COMPARISON SEED RESULTS AT GIVEN TOLERANCE %%%
         for comparison_seed_i = 1:length(seed_list)
             comparison_seed = seed_list(comparison_seed_i);
             % Load in results for this target seed at this target tolerance
-            OSLOM_target_tol_comparison_seed_file = sprintf('%s/OSLOM_results/OSLOM_seed_%d_iters_100_tol_%0.2f.txt', ...
+            OSLOM_target_tol_comparison_seed_file = sprintf('%s/OSLOM_validation/OSLOM_seed_%d_iters_100_tol_%0.2f.txt', ...
                                         data_path, comparison_seed, target_tol);
     
             fid_target_tol_comparison_seed = fopen(OSLOM_target_tol_comparison_seed_file);
             % Scans the text, creating a list, with 0s where it is the next module
             A_target_tol_comparison_seed = textscan(fid_target_tol_comparison_seed, '%d', 'CommentStyle', '#', 'Delimiter', {' ', '\n'});
             A_target_tol_comparison_seed = A_target_tol_comparison_seed{1}; % Sets it as the matrix, gets rid of the cell
-
+    
             fclose(fid_target_tol_comparison_seed);
             
             num_modules_target_tol_comparison_seed = sum(A_target_tol_comparison_seed==0);
@@ -104,31 +108,22 @@ for target_tol_i = 1:length(tol_list)
                 % Equally distributes the communities
                 OSLOM_target_tol_comparison_seed_res(node_i, :) = OSLOM_target_tol_comparison_seed_res(node_i, :)/sum(OSLOM_target_tol_comparison_seed_res(node_i, :));
             end
-
+    
             % COMPUTE ENMI TO TARGET SEED
             ENMI_target_tol_target_seed = ENMI_calc(OSLOM_target_tol_target_seed_res, OSLOM_target_tol_comparison_seed_res);
-
+    
             % Append to results
             ENMI_results_by_tol_sweep_across_seeds(row_counter, 1) = target_tol;
             ENMI_results_by_tol_sweep_across_seeds(row_counter, 2) = target_seed;
             ENMI_results_by_tol_sweep_across_seeds(row_counter, 3) = comparison_seed;
             ENMI_results_by_tol_sweep_across_seeds(row_counter, 4) = ENMI_target_tol_target_seed;
-
+    
             % Increase row_counter
             row_counter = row_counter + 1;
-
         end
-
     end
+
 end
 
 % Save the results
-writematrix(ENMI_results_by_tol_sweep_across_seeds, sprintf("%s/OSLOM_results/ENMI_results_by_tol_sweep_across_seeds.csv", data_path))
-
-%%
-target_tol = 0.3;
-target_seed = 100;
-
-for iteration_num = 1:10
-
-end
+writematrix(ENMI_results_by_tol_sweep_across_seeds, sprintf("%s/OSLOM_validation/ENMI_results_by_tol_sweep_across_seeds.csv", data_path))

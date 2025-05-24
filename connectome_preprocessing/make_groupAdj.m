@@ -2,7 +2,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Define data path and imaging parameters
-diffusion_data_path='../data/HCP_Connectome/';
+% diffusion_data_path='../data/HCP_Connectome/';
+diffusion_data_path='/Users/abry4213/data/OCDA/HCP_Connectome/';
+
+% Add Brain Connectivity Toolbox to path
+addpath('/Users/abry4213/Documents/MATLAB/BCT/2019_03_03_BCT/');
 
 % We use 'HCPMMP1' to work with the Glasser (2016) 360-region atlas
 parcellation = 'HCPMMP1';
@@ -47,15 +51,61 @@ hemiid = zeros(numNodes,1);
 hemiid(1:numNodes/2) = 1;
 hemiid(numNodes/2+1:numNodes) = 2;
 
-% make a selected version of the group matrix
-G = giveMeGroupAdj_variance(connectomes, dens); 
+%%
+% No thresholding -- check (1) what the unthresholded connectome looks
+% like, (2) what the CV is for all edges
+[group_mat_no_thresh, group_mat_CV] = giveMeGroupAdj_variance(connectomes, 1); 
 
-% Filter to the right hemisphere cortex
-RH_full = G(hemiid==2, hemiid==2);
-RH_cortex = RH_full(1:180, 1:180);
+% Log-transform
+group_mat_no_thresh = log(group_mat_no_thresh);
+group_mat_no_thresh(isinf(group_mat_no_thresh)) = 0 
 
-% Log-transform, final output is RH in RH.mat
-RH = log(RH_cortex);
+% Save the unthresholded matrix and CV
+writematrix(group_mat_no_thresh, ...
+    sprintf('%s/Full_brain_adj_mat_no_thresholding.txt', diffusion_data_path))
+writematrix(group_mat_CV, ...
+    sprintf('%s/Full_brain_edge_CV_no_thresholding.txt', diffusion_data_path))
 
-% Save the .mat file
-save(sprintf('%s/RH.mat', diffusion_data_path), 'RH')
+% Also filter to just the right-hemisphere cortex for sensitivity analysis
+RH_full_no_thresh = group_mat_no_thresh(hemiid==2, hemiid==2);
+RH_cortex_no_thresh = RH_full_no_thresh(1:180, 1:180);
+
+RH_full_CV_no_thresh = group_mat_CV(hemiid==2, hemiid==2);
+RH_cortex_CV_no_thresh = RH_full_CV_no_thresh(1:180, 1:180);
+
+% Save the unthresholded right cortex matrix and CV
+writematrix(RH_cortex_no_thresh, ...
+    sprintf('%s/RH_cortex_adj_mat_no_thresholding.txt', diffusion_data_path))
+writematrix(RH_cortex_CV_no_thresh, ...
+    sprintf('%s/RH_cortex_edge_CV_no_thresholding.txt', diffusion_data_path))
+
+
+%% Sweep across different thresholds to compare resulting connectome
+% Main analysis uses dens = 0.15 
+for dens = [0.15, 0.3, 0.45, 0.6]
+    [G, G_CV] = giveMeGroupAdj_variance(connectomes, dens); 
+
+    % Log-transform 
+    G = log(G);
+
+    % Set inf to 0
+    G(isinf(G)) = 0;     % find inf values and replace with 0
+
+    % Filter to left/right cortex
+    cortex_indices = [1:180, 191:370];
+    G_cortex = G(cortex_indices,cortex_indices);
+
+    % Save the whole-brain connectome at this density
+    writematrix(G_cortex, sprintf('%s/Full_cortex_%.2f_CV_density.txt', diffusion_data_path, dens))
+
+    % Subset down to left hemisphere
+    LH_full = G(hemiid==1, hemiid==1);
+    LH_cortex = LH_full(1:180, 1:180);
+    writematrix(LH_cortex, sprintf('%s/LH_cortex_%.2f_CV_density.txt', diffusion_data_path, dens))
+
+    % Subset down to right hemisphere
+    RH_full = G(hemiid==2, hemiid==2);
+    RH_cortex = RH_full(1:180, 1:180);
+    writematrix(RH_cortex, sprintf('%s/RH_cortex_%.2f_CV_density.txt', diffusion_data_path, dens))
+
+end
