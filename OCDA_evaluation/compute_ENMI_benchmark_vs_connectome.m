@@ -10,7 +10,7 @@ network_output_dir = [fileparts(pwd), '/data/'];
 % Matrix to store ENMI values, with an extra column for Louvain
 numNodes = 180;
 numMethods = 23;
-num_networks = 1000
+num_networks = 1000;
 
 % Use a seed of 127 for Louvain
 Louvain_seed=127;

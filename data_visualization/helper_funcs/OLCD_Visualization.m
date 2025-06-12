@@ -43,7 +43,15 @@ temp = temp(3:end); % Gets rid of 'Date' and 'Network' - not needed
 
 for Vis_name = Methods
     for i = 1:length(temp)
-        if strcmp(Final.(temp{i}).Name, Vis_name{1}) % - If the names match
+        final_name_to_compare = Final.(temp{i}).Name;
+        if strcmp(final_name_to_compare, 'Shen')
+            final_name_to_compare = 'Clique';
+            disp('renamed method to Clique')
+        elseif strcmp(final_name_to_compare, 'Jerry')
+            final_name_to_compare = 'SLPA';
+            disp('renamed method to SLPA')
+        end
+        if strcmp(final_name_to_compare, Vis_name{1}) % - If the names match
             % Add blank space for the plot
             full_Matrix = [full_Matrix, NaN(size(full_Matrix, 1), Width)];
             % Saves the full name of the method within the "Final"
