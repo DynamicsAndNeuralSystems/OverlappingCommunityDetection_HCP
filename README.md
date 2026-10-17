@@ -12,6 +12,20 @@ All diffusion magnetic resonance imaging (MRI) data used in this study is freely
 
 ❗ All **intermediate data files** needed to replicate analysis and visuals in this project, including the preprocessed consensus group structural connectome in the right cortex ([RH.mat](https://github.com/DynamicsAndNeuralSystems/OverlappingCommunityDetection_HCP/tree/main/data/HCP_Connectome/RH.mat)), are included in the `data/` folder.
 
+# Code updates after the preprint
+
+Two bugs in the OCDA code (`OCDA_evaluation/`) were found and fixed after the preprint's analyses were run.
+The fixes were made in the source toolbox, [OverlappingCommunityDetection (PR #2)](https://github.com/DynamicsAndNeuralSystems/OverlappingCommunityDetection/pull/2), and ported here:
+
+* **SLPA**: in the `probabilistic` listening rule with `isBlind = 1` (as used here), nodes could sample not-yet-filled slots of their neighbors' memory, so a spurious label spread through the network and SLPA often returned a single community containing all nodes.
+  Each node now also keeps at least its most frequent label after thresholding, as in the original SLPA.
+* **NNMF**: nodes with no membership above the threshold were assigned NaN rather than zero, and ENMI counts NaN entries as membership of every community.
+  This affected the 0.3 and 0.4 thresholds.
+
+The stored results in `data/` were computed before these fixes.
+On the first 20 benchmark networks, mean ENMI increased from 0.087 to 0.146 for SLPA and from 0.434 to 0.534 for NNMF at the 0.4 threshold (with smaller changes at other NNMF thresholds).
+These changes do not affect the ranking of OCDAs (OSLOM performs best, with mean ENMI ≈ 0.8), nor any results from OSLOM or Louvain, including the analysis of the connectome.
+
 # Usage
 
 ## Installation
